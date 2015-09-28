@@ -1,0 +1,13 @@
+name: onie
+version: 1
+vendor: David Duffey <david.duffey@canonical.com>
+summary: Open Network Install Environment (ONIE)
+description: Open Network Install Environment (ONIE) Snap that makes any snappy device an ONIE switch.  This allows you to install other Network Operating Systems (NOS) via the ONIE boot process.
+icon: onie-logo.png
+
+parts:
+  onie:
+    type: custom
+    source: git://github.com/opencomputeproject/onie
+    custom-cmds:
+      - make -C build-config -j4 MACHINE=kvm_x86_64 all
