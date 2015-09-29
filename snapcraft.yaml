@@ -10,6 +10,6 @@ parts:
     type: custom
     source: git://github.com/opencomputeproject/onie
     custom-cmds:
-      - make -C build-config -j4 MACHINE=kvm_x86_64 all
+      - env -u LD_LIBRARY_FLAGS -u CFLAGS -u LDFLAGS make -C build-config -j4 MACHINE=kvm_x86_64 all
 
 build-packages: [autoconf, automake, bc, bison, bridge-utils, build-essential, device-tree-compiler, dosfstools, flex, gawk, git, gperf, libncurses5, libncurses5-dev, libtool, libvirt-bin, mtools, python-all-dev, qemu-kvm, realpath, stgit, texinfo, u-boot-tools, ubuntu-vm-builder, util-linux, virt-manager, xorriso]

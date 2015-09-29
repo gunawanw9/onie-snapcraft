@@ -17,6 +17,7 @@
 
 """Implementation of the "custom" part type."""
 
+import os
 import shlex
 
 import snapcraft
@@ -44,6 +45,7 @@ class CustomPlugin(snapcraft.BasePlugin):
 
     def build(self):
         """Build a custom snap part."""
+
         def make_cmd_list(cmd):
             if isinstance(cmd, list):
                 return [[
